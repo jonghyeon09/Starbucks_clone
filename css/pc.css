@@ -71,17 +71,15 @@ header {
   border-right: 1px solid rgba(0, 0, 0, 10%);
   margin-left: 15px;
 }
-.gnb_wrap_inner .gnb_top ul li:hover {
-  cursor: pointer;
-  border-bottom: 1px solid #555;
-  box-sizing: border-box;
+.gnb_wrap_inner .gnb_top ul li:last-child::after {
+  border: 0;
 }
 .gnb_wrap_inner .gnb_top .search {
   position: absolute;
   right: 54px;
   top: 9px;
-  height: 32px;
-  width: 32px;
+  height: 34px;
+  width: 34px;
   background-color: white;
   border: 1px solid #cccccc;
   border-radius: 5px;
@@ -122,7 +120,6 @@ header {
   justify-content: flex-end;
 }
 .gnb .gnb_inner > ul {
-  background-color: brown;
   display: flex;
   justify-content: center;
   width: 750px;
@@ -131,8 +128,18 @@ header {
 .gnb .gnb_inner ul .gnb_bt {
   padding: 10px 23px 0;
 }
+.gnb .gnb_inner ul .gnb_bt:hover {
+  background-color: #2c2a29;
+  cursor: pointer;
+}
 .gnb .gnb_inner ul .gnb_bt > a {
   font-size: 13px;
+  display: block;
+  width: 100%;
+}
+.gnb .gnb_inner ul .gnb_bt > a.on {
+  color: #669900;
+  text-decoration: underline;
 }
 .gnb .gnb_inner ul .gnb_bt .gnb_sub_wrap {
   position: absolute;
@@ -140,6 +147,7 @@ header {
   top: 66px;
   width: 100%;
   background-color: #2c2a29;
+  display: none;
 }
 .gnb_sub_wrap .gnb_sub {
   padding: 20px 0;
@@ -147,7 +155,6 @@ header {
 .gnb_sub_wrap .gnb_sub .gnb_sub_inner {
   width: 1100px;
   margin: 0 auto;
-  background-color: pink;
   z-index: 100;
   display: flex;
   flex-wrap: wrap;
@@ -167,4 +174,28 @@ header {
 .gnb_sub_inner ul li a {
   font-size: 12px;
   color: #999;
+}
+.gnb_sub_wrap .gnb_sub_under {
+  width: 100%;
+  padding: 5px 0 20px 0;
+  background: url(img/gnb_sub_txbg.jpg);
+  display: inline-block;
+}
+.gnb_sub_under .gnb_sub_under_inner {
+  width: 1100px;
+  margin: 0 auto;
+}
+.gnb_sub_under .gnb_sub_under_inner .gnb_sub_under_inner_txt {
+  line-height: 18px;
+}
+.gnb_sub_under .gnb_sub_under_inner .gnb_sub_under_inner_txt a {
+  display: block;
+  margin-top: 25px;
+  font-size: 12px;
+  color: #999;
+}
+.gnb_sub_under .gnb_sub_under_inner .gnb_sub_under_inner_txt p {
+  color: #64a70b;
+  font-size: 12px;
+  float: left;
 }
