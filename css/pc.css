@@ -1,4 +1,5 @@
 @import url(reset.css);
+@import url(keyframes.css);
 
 .wrap {
   position: relative;
@@ -9,7 +10,7 @@ header {
   height: 120px;
   width: 100%;
   margin: 0 auto;
-  position: fixed;
+  z-index: 1000;
 }
 .gnb_wrap {
   background: #f6f5ef;
@@ -27,7 +28,6 @@ header {
   top: 22px;
   width: 75px;
   height: 75px;
-  z-index: 100;
 }
 .gnb_wrap_inner .logo a {
   display: block;
@@ -198,4 +198,151 @@ header {
   color: #64a70b;
   font-size: 12px;
   float: left;
+}
+section {
+  position: relative;
+}
+.main {
+  width: 100%;
+  height: 646px;
+  background: url(img/2022_NewYear_main_bg.png) no-repeat center/cover;
+}
+.main .main_inner {
+  position: relative;
+  width: 1080px;
+  height: 100%;
+  margin: 0 auto;
+}
+.main_inner .main_slogan {
+  max-width: 282px;
+  padding-top: 5.1%;
+  padding-left: 1.8%;
+  opacity: 0;
+  transition: 0.5s;
+}
+.main_inner .m_img {
+  display: none;
+}
+.main_inner .main_img01 {
+  position: absolute;
+  bottom: 14.3%;
+  left: 7%;
+  width: 52.6%;
+  max-width: 567px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.main_inner .main_img02 {
+  position: absolute;
+  bottom: 32.1%;
+  right: 15.7%;
+  width: 45.6%;
+  max-width: 492px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.main_inner .main_img03 {
+  position: absolute;
+  bottom: 18.8%;
+  right: -8.7%;
+  width: 29.3%;
+  max-width: 315px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.main_inner .slogan_bt {
+  position: absolute;
+  left: 9.3%;
+  width: 125px;
+  height: 38px;
+  margin-top: 46px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.main_inner .slogan_bt a {
+  color: #4f7161;
+  border: 2px solid #4f7161;
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+  line-height: 34px;
+  border-radius: 5px;
+  text-align: center;
+  transition: 0.5s;
+}
+.main_inner .slogan_bt a:hover {
+  background-color: #4f7161;
+  color: white;
+}
+.notice {
+  position: relative;
+  width: 100%;
+  height: 62px;
+}
+.notice .notice_left {
+  float: left;
+  width: 55%;
+  height: 100%;
+  background-color: #111;
+}
+.notice_left .left_inner_wrap {
+  width: 730px;
+  height: 100%;
+  background-color: gray;
+  float: right;
+}
+.left_inner_wrap .left_inner {
+  position: relative;
+  margin-left: 89px;
+  width: 621px;
+  height: 100%;
+}
+.left_inner_wrap .left_inner .notice_slide {
+  position: relative;
+  width: 494px;
+}
+.left_inner .notice_slide p {
+  float: left;
+  display: block;
+  line-height: 62px;
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+}
+.left_inner .notice_slide ul {
+  float: left;
+  line-height: 62px;
+}
+.left_inner .notice_slide ul li {
+  margin-left: 15px;
+}
+.left_inner .notice_slide ul li a {
+  font-size: 13px;
+  /* color: white; */
+  font-weight: bold;
+}
+.left_inner .notice_plus {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  height: 36px;
+  width: 36px;
+  background: url(img/btn_notice_plus.png) no-repeat;
+  background-size: 36px;
+  cursor: pointer;
+}
+
+.notice .notice_right {
+  float: right;
+  width: 45%;
+  height: 100%;
+  background-color: #f6f5ef;
+}
+.notice_right .right_inner_wrap {
+  float: left;
+  width: 550px;
+  height: 100%;
+  background-color: ivory;
 }
