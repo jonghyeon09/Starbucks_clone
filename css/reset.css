@@ -91,13 +91,13 @@ video {
   font: inherit;
   vertical-align: baseline;
   box-sizing: border-box;
-  font-family: Arial, Georgia;
 }
 a {
   text-decoration: none;
   color: black;
 }
-a:hover {
+a:hover,
+a:focus {
   text-decoration: underline;
 }
 /* HTML5 display-role reset for older browsers */
