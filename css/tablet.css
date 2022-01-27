@@ -196,20 +196,20 @@
     top: 30px;
     transform: translate(-50%);
   }
-  .m_gnb_menu > ul,
+  .m_gnb_menu,
   .m_gnb_sub {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  .m_gnb_menu > ul > li,
+  .m_gnb_menu > li,
   .m_gnb_sub > li {
     position: relative;
     background-color: #181818;
     border-bottom: 1px solid #222;
     font-size: 24px;
   }
-  .m_gnb_menu > ul > li > a,
+  .m_gnb_menu > li > a,
   .m_gnb_sub > li > a {
     padding-left: 35px;
     color: white;
