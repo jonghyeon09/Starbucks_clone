@@ -4,7 +4,6 @@ $(document).ready(function () {
   const li_height = $(li).height();
 
   $(ul).css({ top: -li_height });
-  console.log($(ul).children());
   setInterval(() => {
     $(ul).animate(
       { top: -li_height * 2 },
@@ -15,5 +14,5 @@ $(document).ready(function () {
         },
       }
     );
-  }, 2000);
+  }, 3000);
 });

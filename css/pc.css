@@ -293,7 +293,6 @@
   .notice_left .left_inner_wrap {
     width: 730px;
     height: 100%;
-    background-color: gray;
     float: right;
   }
   .left_inner_wrap .left_inner {
@@ -354,7 +353,6 @@
   .notice_right .right_inner_wrap {
     width: 550px;
     height: 100%;
-    background-color: ivory;
     display: flex;
     justify-content: center;
     align-items: center;
