@@ -14,12 +14,12 @@ $(document).ready(function () {
   $(".tablet_gnb03").click(function (e) {
     $(".m_gnb_bg").show();
     $(".m_gnb_wrap").animate({ right: "0" }, 300);
-    $(".wrap").animate({ left: "-70%" }, 300);
+    $("section").animate({ left: "-70%" }, 300);
   });
   $(".m_gnb_close").click(function (e) {
     $(".m_gnb_bg").hide();
     $(".m_gnb_wrap").animate({ right: "-100%" }, 300);
-    $(".wrap").animate({ left: "0" }, 300);
+    $("section").animate({ left: "0" }, 300);
   });
 
   $(m_gnb_sub).hide();

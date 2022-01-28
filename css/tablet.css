@@ -3,51 +3,43 @@
 @media screen and (max-width: 1023px) {
   .wrap {
     position: relative;
+    overflow: hidden;
   }
-
   header {
     position: fixed;
-    height: 69px;
+    top: 0;
+    left: 0;
     width: 100%;
-    margin: 0 auto;
-    z-index: 100;
     font-family: Arial, Georgia;
-  }
-  .gnb_wrap {
-    background: #f6f5ef;
+    z-index: 99;
+    height: 70px;
     border-bottom: 1px solid #e5e5e5;
-    height: 100%;
+    background: #f6f5ef;
   }
-  .gnb_wrap .gnb_wrap_inner {
-    width: 100%;
-    height: 100%;
-    position: relative;
-  }
-  .gnb_wrap_inner .logo {
+  .gnb_wrap .logo {
     position: absolute;
     left: 10px;
     top: 13px;
     width: 45px;
     height: 45px;
   }
-  .gnb_wrap_inner .logo a {
+  .gnb_wrap .logo a {
     display: block;
     width: 100%;
     height: 100%;
     background: url(img/logo.png);
     background-size: 45px, auto;
   }
-  .gnb_wrap_inner .gnb_top {
+  .gnb_wrap .gnb_top {
     display: none;
   }
-  .gnb_wrap_inner .gnb_top .search {
+  .gnb_wrap .gnb_top .search {
     display: none;
   }
   .gnb {
     display: none;
   }
   .tablet_gnb {
-    float: right;
     height: 100%;
   }
   .tablet_gnb ul {
@@ -89,7 +81,7 @@
     height: 100%;
     opacity: 0.7;
     position: fixed;
-    z-index: 999;
+    z-index: 1000;
   }
   .m_gnb_wrap {
     width: 70%;
@@ -99,6 +91,7 @@
     right: -100%;
     background-color: #111;
     z-index: 1000;
+    font-family: Arial, Georgia;
   }
   .m_gnb_wrap .m_gnb_inner {
     overflow: auto;
@@ -110,14 +103,18 @@
     position: absolute;
     left: -58px;
     top: 47px;
+    cursor: pointer;
   }
   .m_gnb_inner .m_gnb_close span {
     display: block;
     background: url(img/btn_gnb_close.png) 100%;
     width: 100%;
     height: 100%;
-    transform: rotate(1turn);
     transition: transform 1s;
+  }
+  .m_gnb_inner .m_gnb_close span:hover,
+  .m_gnb_inner .m_gnb_close span:focus {
+    transform: rotate(180deg);
   }
   .m_gnb_inner .m_gnb_search {
     background-color: #2d2926;
@@ -228,5 +225,91 @@
     width: 100%;
     padding-left: 50px;
     font-size: 18px;
+  }
+  .section_top {
+    position: relative;
+    width: 100%;
+    height: 70px;
+  }
+  section {
+    position: relative;
+  }
+  .main {
+    position: relative;
+    width: 100%;
+    height: 510px;
+    background: url(img/2022_NewYear_main_bg.png) no-repeat;
+    background-position: center bottom;
+    background-size: auto 100%;
+  }
+  .main .main_inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .main_inner .main_slogan {
+    max-width: 282px;
+    padding: 10% 4% 0 6%;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  .main_slogan .pc_img {
+    width: 160px;
+  }
+  .main_inner .m_img {
+    display: none;
+  }
+  .main_inner .main_img01 {
+    position: absolute;
+    bottom: 14.3%;
+    left: 2%;
+    width: 52.6%;
+    max-width: 567px;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  .main_inner .main_img02 {
+    position: absolute;
+    bottom: 32.1%;
+    right: 20.7%;
+    width: 45.6%;
+    max-width: 492px;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  .main_inner .main_img03 {
+    position: absolute;
+    bottom: 18.8%;
+    right: -3.7%;
+    width: 29.3%;
+    max-width: 315px;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  .main_inner .slogan_bt {
+    position: absolute;
+    left: 8.5%;
+    width: 125px;
+    height: 38px;
+    margin-top: 30px;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  .main_inner .slogan_bt a {
+    color: #4f7161;
+    border: 2px solid #4f7161;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    line-height: 34px;
+    border-radius: 5px;
+    text-align: center;
+    transition: 0.5s;
+  }
+  .main_inner .slogan_bt a:hover {
+    background-color: #4f7161;
+    color: white;
   }
 }
