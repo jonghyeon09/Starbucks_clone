@@ -49,7 +49,6 @@
   .tablet_gnb {
     float: right;
     height: 100%;
-    background-color: orange;
   }
   .tablet_gnb ul {
     display: flex;
@@ -111,7 +110,6 @@
     position: absolute;
     left: -58px;
     top: 47px;
-    background-color: black;
   }
   .m_gnb_inner .m_gnb_close span {
     display: block;
