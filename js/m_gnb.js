@@ -9,6 +9,19 @@ $(document).ready(function () {
   let count_sub = false;
   let i;
 
+  $(".m_gnb_bg").hide();
+
+  $(".tablet_gnb03").click(function (e) {
+    $(".m_gnb_bg").show();
+    $(".m_gnb_wrap").animate({ right: "0" }, 300);
+    $(".wrap").animate({ left: "-70%" }, 300);
+  });
+  $(".m_gnb_close").click(function (e) {
+    $(".m_gnb_bg").hide();
+    $(".m_gnb_wrap").animate({ right: "-100%" }, 300);
+    $(".wrap").animate({ left: "0" }, 300);
+  });
+
   $(m_gnb_sub).hide();
   $(m_gnb_sub2).hide();
   $(sub_up).css({ transform: "rotate(0.5turn)" });
@@ -17,44 +30,28 @@ $(document).ready(function () {
   $(m_gnb_title).click(function (e) {
     e.stopPropagation();
     i = $(this).index();
+    $(m_gnb_sub[i]).toggle(300);
     if (count == false) {
-      sub_menu_down(i);
+      $(sub_up[i]).css({ transform: "none" });
       count = true;
     } else if (count == true) {
-      sub_menu_up(i);
+      $(sub_up[i]).css({ transform: "rotate(0.5turn)" });
       count = false;
     }
-    console.log(count);
+    $(m_gnb_sub2).hide();
+    $(sub_arrow).css({ transform: "rotate(0.5turn)" });
   });
 
   $(m_gnb_sub_li).click(function (e) {
     e.stopPropagation();
     i = $(m_gnb_sub_li).index(this);
-    console.log(i);
+    $(m_gnb_sub2[i]).toggle(300);
     if (count_sub == false) {
-      sub2_menu_down(i);
+      $(sub_arrow[i]).css({ transform: "none" });
       count_sub = true;
     } else if (count_sub == true) {
-      sub2_menu_up(i);
+      $(sub_arrow[i]).css({ transform: "rotate(0.5turn)" });
       count_sub = false;
     }
   });
-
-  function sub_menu_down(i) {
-    $(m_gnb_sub[i]).stop().slideDown();
-    $(m_gnb_sub[i]).css({ display: "block" });
-    $(sub_up[i]).css({ transform: "none" });
-  }
-  function sub_menu_up(i) {
-    $(m_gnb_sub[i]).stop().slideUp();
-    $(sub_up[i]).css({ transform: "rotate(0.5turn)" });
-  }
-  function sub2_menu_down(i) {
-    $(m_gnb_sub2[i]).stop().slideDown();
-    $(sub_arrow[i]).css({ transform: "none" });
-  }
-  function sub2_menu_up(i) {
-    $(m_gnb_sub2[i]).stop().slideUp();
-    $(sub_arrow[i]).css({ transform: "rotate(0.5turn)" });
-  }
 });
