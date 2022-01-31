@@ -17,6 +17,15 @@ $(document).ready(function () {
     $(sub_menu[i]).stop().slideUp();
   });
 
+  $(".search a").click(function () {
+    $(".search").animate({ width: "180px" });
+    $(".search input").css({ display: "inline-block" });
+    setTimeout(() => {
+      document.querySelector(".search input").style.opacity = "1";
+    });
+    $(".gnb_top ul").animate({ right: "232px" });
+  });
+
   function subMenu(i) {
     $(sub_menu).css({ display: "none" });
     $(sub_menu[i]).stop().slideDown();
