@@ -56,7 +56,6 @@ $(document).ready(function () {
       count = 2;
     }
     curPos = destination;
-    console.log(destination);
     ul.style.transform = `translate3d(${destination}px, 0px, 0px)`;
     ul.style.transitionDuration = "300ms";
     setTimeout(() => {
@@ -140,7 +139,6 @@ $(document).ready(function () {
 
   $(next).click(function () {
     count++;
-    console.log(curPos);
     if (click == false) {
       click = true;
       if (count == 0) {
