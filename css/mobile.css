@@ -3,6 +3,7 @@
 @media screen and (max-width: 767px) {
   .wrap {
     position: relative;
+    overflow: hidden;
   }
   header {
     position: fixed;
@@ -602,5 +603,65 @@
     width: 100%;
     height: 100%;
     color: white;
+  }
+  .bean_wrap {
+    width: 100%;
+    height: 172.81vw;
+    background: url(img/2022_m_NewYear_bean_bg.png) center/ cover;
+  }
+  .bean_wrap .bean_inner {
+    position: relative;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .bean_inner .bean_img {
+    position: absolute;
+    left: 50%;
+    top: 10.6%;
+    transform: translate(-28.7%, 11.8%);
+    width: 56.74%;
+    max-width: 363px;
+  }
+  .bean_inner .bean_img .pc_bean {
+    display: none;
+  }
+  .bean_inner .bean_img .m_bean {
+    display: block;
+  }
+  .bean_inner .bean_txt {
+    position: absolute;
+    width: 71.67%;
+    top: auto;
+    left: 50%;
+    bottom: 10.5%;
+    transform: translate(-50%, -14%);
+    max-width: 459px;
+  }
+  .bean_inner .bean_txt .pc_bean_txt {
+    display: none;
+  }
+  .bean_inner .bean_txt .m_bean_txt {
+    display: block;
+  }
+  .bean_inner .bean_txt .bean_bt {
+    width: 115px;
+    height: 34px;
+    line-height: 30px;
+    margin: 14% auto 0;
+    border: 2px solid #453d3d;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .bean_inner .bean_txt .bean_bt a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 13px;
+    color: #453d3d;
+  }
+  .bean_inner .bean_txt .bean_bt a:hover {
+    background-color: #453d3d;
+    color: white;
+    transition: 0.7s;
   }
 }

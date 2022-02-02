@@ -351,7 +351,7 @@
   }
   .left_inner .notice_slide ul {
     position: absolute;
-    left: 0;
+    left: 25%;
     line-height: 80px;
     width: 100%;
   }
@@ -633,6 +633,65 @@
     display: inline-block;
     width: 100%;
     height: 100%;
+    color: white;
+  }
+  .bean_wrap {
+    width: 100%;
+    height: 47.66vw;
+    background: url(img/2022_NewYear_bean_bg.png) center/ cover;
+  }
+  .bean_wrap .bean_inner {
+    position: relative;
+    max-width: 1080px;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .bean_inner .bean_img {
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 33.5%;
+    max-width: 360px;
+  }
+  .bean_inner .bean_img img {
+    display: none;
+  }
+  .bean_inner .bean_img .pc_bean {
+    display: block;
+  }
+  .bean_inner .bean_txt {
+    position: absolute;
+    width: 37.7%;
+    top: 32%;
+    right: 11%;
+    max-width: 405px;
+  }
+  .bean_inner .bean_txt img {
+    display: none;
+  }
+  .bean_inner .bean_txt .pc_bean_txt {
+    display: block;
+  }
+  .bean_inner .bean_txt .bean_bt {
+    width: 125px;
+    height: 38px;
+    line-height: 34px;
+    margin-top: 39px;
+    border: 2px solid #453d3d;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .bean_inner .bean_txt .bean_bt a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    color: #453d3d;
+    transition: 0.7s;
+  }
+  .bean_inner .bean_txt .bean_bt a:hover {
+    background-color: #453d3d;
     color: white;
   }
 }
