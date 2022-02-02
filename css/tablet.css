@@ -346,6 +346,9 @@
     font-weight: bold;
     color: white;
   }
+  .left_inner .notice_slide img {
+    display: none;
+  }
   .left_inner .notice_slide ul {
     position: relative;
     left: 75%;
@@ -354,11 +357,13 @@
     width: 100%;
   }
   .left_inner .notice_slide ul li {
-    width: 100%;
+    width: 80%;
   }
   .left_inner .notice_slide ul li a {
+    width: 100%;
+    display: inline-block;
     white-space: nowrap;
-    display: block;
+    overflow: hidden;
     text-overflow: ellipsis;
     font-size: 14px;
     color: white;
@@ -396,5 +401,143 @@
   }
   .right_inner p {
     font-weight: bold;
+  }
+  .prom_wrap {
+    position: relative;
+    width: 100%;
+    height: 446px;
+    border-top: 1px solid #f6f5ef;
+    background-color: #f6f5ef;
+  }
+  .prom_slider {
+    width: 620px;
+    height: 421px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 25px;
+    overflow: hidden;
+  }
+  .prom_slider .prev {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 390px;
+    z-index: 1;
+  }
+  .prom_slider .prev a {
+    display: block;
+    width: 51px;
+    height: 51px;
+    border: 2px solid #222222;
+    border-radius: 50%;
+    background: url(img/arrow_left_on.png) no-repeat center;
+    transition: 0.7s;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .prom_slider .prev a:hover {
+    background-color: white;
+  }
+  .prom_slider .next {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 390px;
+    z-index: 1;
+  }
+  .prom_slider .next a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #222222;
+    border-radius: 50%;
+    background: url(img/arrow_right_on.png) no-repeat center;
+    transition: 0.7s;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .prom_slider .next a:hover {
+    background-color: white;
+  }
+  .prom_slider_view {
+    width: 100%;
+    height: 346px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  .prom_slider_view ul {
+    width: 500%;
+    display: flex;
+    position: relative;
+    left: 510px;
+  }
+  .prom_slider_view ul li {
+    width: 500px;
+    margin: 0 5px;
+    opacity: 0.4;
+  }
+  .prom_slider_view ul li a {
+    border: 2px solid #222;
+    border-radius: 3px;
+    color: #222;
+    display: block;
+    font-size: 14px;
+    width: 125px;
+    height: 38px;
+    line-height: 38px;
+    margin: -30px auto 0;
+    text-align: center;
+    position: relative;
+  }
+  .prom_slider .slider_controller {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    height: 12px;
+    text-align: center;
+  }
+  .slider_controller .stop {
+    display: inline-block;
+    background: url(img/main_prom_stop.png);
+    width: 9px;
+    height: 12px;
+    vertical-align: top;
+    cursor: pointer;
+  }
+  .slider_controller .start {
+    display: inline-block;
+    background: url(img/main_prom_play.png);
+    width: 9px;
+    height: 12px;
+    vertical-align: top;
+    cursor: pointer;
+  }
+  .slider_controller .pager {
+    display: inline-block;
+    height: 12px;
+    vertical-align: top;
+  }
+  .slider_controller .pager .pager_bt {
+    margin-left: 8px;
+    float: left;
+    height: 12px;
+  }
+  .slider_controller .pager .pager_bt a {
+    display: inline-block;
+    background: url(img/main_prom_off.png);
+    width: 13px;
+    height: 12px;
+    vertical-align: top;
+  }
+  .slider_controller .pager .pager_bt a.active {
+    background: url(img/main_prom_on.png);
   }
 }

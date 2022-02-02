@@ -102,6 +102,10 @@ a:focus {
 }
 img {
   max-width: 100%;
+  vertical-align: top;
+}
+strong {
+  font-weight: bold;
 }
 /* HTML5 display-role reset for older browsers */
 article,

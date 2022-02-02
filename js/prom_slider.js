@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  const slider = document.querySelector(".prom_slider_view");
   const ul = document.querySelector(".prom_slider_view ul");
   const li = document.querySelectorAll(".prom_slider_view ul li");
   const pager_bt = document.querySelectorAll(".pager_bt");
@@ -8,13 +7,65 @@ $(document).ready(function () {
   const prom_bt = document.querySelector(".right_inner");
   const prom_arrow = document.querySelector(".prom img");
   const li_width = $(li).width() + 10;
-  const li_0 = 829;
+  const width = $(".prom_slider_view ul li").width() + 10;
   let click = false;
   let count = 0;
   let e = 0;
   let prom_bt_count = 0;
-  let pager_count = 0;
 
+  //모바일
+  const prom_slider_view = document.getElementById("prom_slider_view");
+  let startPos = 0;
+  let offset = 0;
+  let curPos = 0;
+
+  prom_slider_view.addEventListener("touchstart", (e) => {
+    clearInterval(interval);
+    $("#play").removeClass("stop");
+    $("#play").addClass("start");
+    startPos = e.touches[0].pageX;
+    $(li).stop().animate({ opacity: "0.4" });
+    setTimeout(() => {
+      $(pager_bt[0]).trigger("click");
+    }, 0);
+  });
+
+  prom_slider_view.addEventListener("touchmove", (e) => {
+    offset = curPos + (e.targetTouches[0].pageX - startPos);
+    ul.style.transform = `translate3d(${offset}px, 0px, 0px)`;
+    ul.style.transitionDuration = "0ms";
+  });
+
+  prom_slider_view.addEventListener("touchend", (e) => {
+    const sum = curPos + (e.changedTouches[0].pageX - startPos);
+    let destination = Math.round(sum / li_width) * li_width;
+    if (destination == 0) {
+      destination = 0;
+      count = 0;
+    } else if (destination == -li_width) {
+      destination = -li_width;
+      count = 1;
+    } else if (destination == -(li_width * 2)) {
+      count = 2;
+      destination = -(li_width * 2);
+    } else if (destination == -(li_width * 3)) {
+      destination = 0;
+      count = 0;
+    } else if (destination == li_width) {
+      destination = -li_width * 2;
+      count = 2;
+    }
+    curPos = destination;
+    console.log(destination);
+    ul.style.transform = `translate3d(${destination}px, 0px, 0px)`;
+    ul.style.transitionDuration = "300ms";
+    setTimeout(() => {
+      ul.style.transitionDuration = "0ms";
+    }, 300);
+    pager(count);
+    $(li).stop().animate({ opacity: "1" });
+  });
+  //////////////////////////////////////////////////
   $(pager_bt[0]).children().addClass("active");
 
   $(li[1]).css({ opacity: "1" });
@@ -22,8 +73,10 @@ $(document).ready(function () {
   $(".prom_wrap").hide();
 
   $(pager_bt).click(function () {
+    clearInterval(interval);
+    $("#play").removeClass("stop");
+    $("#play").addClass("start");
     i = $(this).index();
-    console.log(i);
     if (click == false) {
       click = true;
       if (i == 0) {
@@ -31,7 +84,7 @@ $(document).ready(function () {
         $(ul)
           .stop()
           .animate(
-            { left: `${li_0}px` },
+            { left: `${width}px` },
             {
               complete: function () {
                 click = false;
@@ -74,19 +127,20 @@ $(document).ready(function () {
       $(".prom_wrap").slideDown();
       $(prom_arrow).css({ transform: "rotate(0.5turn)" });
       prom_bt_count = 1;
-      // interval = setInterval(() => {
-      //   $(next).trigger("click");
-      // }, 2000);
+      interval = setInterval(() => {
+        $(next).trigger("click");
+      }, 2000);
     } else if (prom_bt_count == 1) {
       $(".prom_wrap").slideUp();
       $(prom_arrow).css({ transform: "none" });
       prom_bt_count = 0;
-      // clearInterval(interval);
+      clearInterval(interval);
     }
   });
 
   $(next).click(function () {
     count++;
+    console.log(curPos);
     if (click == false) {
       click = true;
       if (count == 0) {
@@ -96,6 +150,7 @@ $(document).ready(function () {
             { left: 0 },
             {
               complete: function () {
+                $(ul).animate({ left: 0 });
                 click = false;
               },
             }
@@ -107,6 +162,7 @@ $(document).ready(function () {
             { left: -li_width * 0 },
             {
               complete: function () {
+                $(ul).animate({ left: -li_width * 0 });
                 click = false;
               },
             }
@@ -118,6 +174,7 @@ $(document).ready(function () {
             { left: -li_width * 1 },
             {
               complete: function () {
+                $(ul).animate({ left: -li_width * 1 });
                 click = false;
               },
             }
@@ -129,7 +186,7 @@ $(document).ready(function () {
             { left: -li_width * 2 },
             {
               complete: function () {
-                $(ul).css({ left: `${li_0}px` });
+                $(ul).css({ left: `${width}px` });
                 click = false;
               },
             }
@@ -139,7 +196,6 @@ $(document).ready(function () {
     }
     li_opacity(count);
     pager(count);
-    console.log(count);
   });
 
   $(prev).click(function (e) {
@@ -150,7 +206,7 @@ $(document).ready(function () {
         $(ul)
           .stop()
           .animate(
-            { left: li_0 * 2 },
+            { left: width * 2 },
             {
               complete: function () {
                 $(ul).css({ left: -li_width * 1 });
@@ -166,6 +222,7 @@ $(document).ready(function () {
             { left: li_width },
             {
               complete: function () {
+                $(ul).animate({ left: li_width });
                 click = false;
               },
             }
@@ -177,6 +234,7 @@ $(document).ready(function () {
             { left: 0 },
             {
               complete: function () {
+                $(ul).animate({ left: 0 });
                 click = false;
               },
             }
@@ -185,7 +243,6 @@ $(document).ready(function () {
     }
     li_opacity(count);
     pager(count);
-    console.log(count);
   });
 
   $("#play").click(function () {
