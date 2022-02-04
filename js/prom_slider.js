@@ -25,44 +25,65 @@ $(document).ready(function () {
     $("#play").addClass("start");
     startPos = e.touches[0].pageX;
     $(li).stop().animate({ opacity: "0.4" });
-    setTimeout(() => {
-      $(pager_bt[0]).trigger("click");
-    }, 0);
+    offset = 0;
   });
 
   prom_slider_view.addEventListener("touchmove", (e) => {
     offset = curPos + (e.targetTouches[0].pageX - startPos);
+    // if (count == 0) {
+    //   offset = offset + li_width;
+    // } else if (count == 1) {
+    //   offset = curPos + (e.targetTouches[0].pageX - startPos);
+    // } else if (count == 2) {
+    //   offset = offset - li_width;
+    // }
+    // ul.style.left = `${offset}px`;
     ul.style.transform = `translate3d(${offset}px, 0px, 0px)`;
-    ul.style.transitionDuration = "0ms";
+    // ul.style.transitionDuration = "0ms";
+    document.querySelector("body").style.overflow = "hidden";
+    console.log(`${offset}`);
   });
 
   prom_slider_view.addEventListener("touchend", (e) => {
-    const sum = curPos + (e.changedTouches[0].pageX - startPos);
-    let destination = Math.round(sum / li_width) * li_width;
-    if (destination == 0) {
-      destination = 0;
-      count = 0;
-    } else if (destination == -li_width) {
-      destination = -li_width;
-      count = 1;
-    } else if (destination == -(li_width * 2)) {
-      count = 2;
-      destination = -(li_width * 2);
-    } else if (destination == -(li_width * 3)) {
-      destination = 0;
-      count = 0;
-    } else if (destination == li_width) {
-      destination = -li_width * 2;
-      count = 2;
-    }
-    curPos = destination;
-    ul.style.transform = `translate3d(${destination}px, 0px, 0px)`;
-    ul.style.transitionDuration = "300ms";
-    setTimeout(() => {
+    ul.style.transform = `translate3d(0px, 0px, 0px)`;
+    ul.style.transitionDuration = "1ms";
+    // ul.style.left = `${li_width}`;
+    if (offset < -150) {
+      next_event();
+    } else if (offset > 150) {
+      prev_event();
+    } else {
+      ul.style.transform = `translate3d(0px, 0px, 0px)`;
       ul.style.transitionDuration = "0ms";
-    }, 300);
-    pager(count);
-    $(li).stop().animate({ opacity: "1" });
+      li_opacity(count);
+    }
+    // const sum = curPos + (e.changedTouches[0].pageX - startPos);
+    // let destination = Math.round(sum / li_width) * li_width;
+    // if (destination == 0) {
+    //   destination = 0;
+    //   count = 0;
+    // } else if (destination == -li_width) {
+    //   destination = -li_width;
+    //   count = 1;
+    // } else if (destination == -(li_width * 2)) {
+    //   count = 2;
+    //   destination = -(li_width * 2);
+    // } else if (destination == -(li_width * 3)) {
+    //   destination = 0;
+    //   count = 0;
+    // } else if (destination == li_width) {
+    //   destination = -li_width * 2;
+    //   count = 2;
+    // }
+    // curPos = destination;
+    // ul.style.transform = `translate3d(${destination}px, 0px, 0px)`;
+    // ul.style.transitionDuration = "300ms";
+    // setTimeout(() => {
+    //   ul.style.transitionDuration = "0ms";
+    // }, 300);
+    // pager(count);
+    // $(li).stop().animate({ opacity: "1" });
+    document.querySelector("body").style.overflow = "visible";
   });
   //////////////////////////////////////////////////
   $(pager_bt[0]).children().addClass("active");
@@ -138,6 +159,45 @@ $(document).ready(function () {
   });
 
   $(next).click(function () {
+    next_event();
+  });
+
+  $(prev).click(function (e) {
+    prev_event();
+  });
+
+  $("#play").click(function () {
+    if (e == 0) {
+      $("#play").removeClass("stop");
+      $("#play").addClass("start");
+      e = 1;
+      clearInterval(interval);
+    } else if (e == 1) {
+      e = 0;
+      $("#play").addClass("stop");
+      $("#play").removeClass("start");
+      interval = setInterval(() => {
+        $(next).trigger("click");
+      }, 2000);
+    }
+  });
+
+  function li_opacity(count) {
+    $(li).stop().animate({ opacity: "0.4" }, 500);
+    $(li[count + 1])
+      .stop()
+      .animate({ opacity: "1" }, 500);
+  }
+  function pager(count) {
+    $(pager_bt).children().removeClass("active");
+    $(pager_bt[count]).children().addClass("active");
+  }
+  function pager_idx(i) {
+    $(pager_bt).children().removeClass("active");
+    $(pager_bt[i]).children().addClass("active");
+  }
+
+  function next_event() {
     count++;
     if (click == false) {
       click = true;
@@ -194,9 +254,9 @@ $(document).ready(function () {
     }
     li_opacity(count);
     pager(count);
-  });
+  }
 
-  $(prev).click(function (e) {
+  function prev_event() {
     count--;
     if (click == false) {
       click = true;
@@ -241,36 +301,5 @@ $(document).ready(function () {
     }
     li_opacity(count);
     pager(count);
-  });
-
-  $("#play").click(function () {
-    if (e == 0) {
-      $("#play").removeClass("stop");
-      $("#play").addClass("start");
-      e = 1;
-      clearInterval(interval);
-    } else if (e == 1) {
-      e = 0;
-      $("#play").addClass("stop");
-      $("#play").removeClass("start");
-      interval = setInterval(() => {
-        $(next).trigger("click");
-      }, 2000);
-    }
-  });
-
-  function li_opacity(count) {
-    $(li).stop().animate({ opacity: "0.4" }, 500);
-    $(li[count + 1])
-      .stop()
-      .animate({ opacity: "1" }, 500);
-  }
-  function pager(count) {
-    $(pager_bt).children().removeClass("active");
-    $(pager_bt[count]).children().addClass("active");
-  }
-  function pager_idx(i) {
-    $(pager_bt).children().removeClass("active");
-    $(pager_bt[i]).children().addClass("active");
   }
 });

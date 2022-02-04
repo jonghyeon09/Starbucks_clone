@@ -55,8 +55,8 @@ $(document).ready(function () {
     }
 
     function hide() {
-      $(bean_img).animate({ left: "-100%", opacity: "0" }, 1000);
-      $(bean_txt).animate({ right: "-100%", opacity: "0" }, 1000);
+      $(bean_img).animate({ left: "-100%", opacity: "0" }, 2000);
+      $(bean_txt).animate({ right: "-100%", opacity: "0" }, 2000);
     }
   }
   // if (window.matchMedia("(max-width: 1023px)").matches) {
