@@ -1,66 +1,107 @@
-$(document).ready(function () {
-  const bean_img = document.querySelector(".bean_img");
-  const bean_txt = document.querySelector(".bean_txt");
+const bean_img = document.querySelector(".bean_img");
+const bean_txt = document.querySelector(".bean_txt");
+const ease_out = "2s ease-out";
 
-  if (window.matchMedia("(min-width: 1024px)").matches) {
-    let bean_img_left = 13.5;
-    let bean_txt_right = 8.4;
+if (window.matchMedia("(min-width: 1024px)").matches) {
+  let bean_img_left = 13.5;
+  let bean_txt_right = 8.4;
 
-    // $(bean_img).css({ left: "-100%", opacity: "0" });
-    // $(bean_txt).css({ right: "-100%", opacity: "0" });
-    // $(window).scroll(function (e) {
-    //   let scrollY = $(window).scrollTop();
-    //   console.log(scrollY);
+  start();
 
-    //   if (scrollY >= 100) {
-    //     show();
-    //     // $(window).off("scroll");
-    //   }
-    //   if (scrollY == 0) {
-    //     hide();
-    //   }
-    // });
+  window.addEventListener("scroll", scroll);
 
-    window.addEventListener("scroll", scroll);
-    bean_img.style.left = "-100%";
-    bean_img.style.opacity = "0";
-    bean_txt.style.right = "-100%";
-    bean_txt.style.opacity = "0";
+  function scroll() {
+    let scrollY = window.scrollY;
 
-    function scroll(params) {
-      let scrollY = window.scrollY;
-      console.log(scrollY);
-
-      if (scrollY >= 100) {
-        bean_img.style.left = `${bean_img_left}%`;
-        bean_img.style.opacity = "1";
-        bean_img.style.transition = "2s";
-        bean_txt.style.right = `${bean_txt_right}%`;
-        bean_txt.style.opacity = "1";
-        bean_txt.style.transition = "2s";
-      }
-      if (scrollY == 0) {
-        bean_img.style.left = "-100%";
-        bean_img.style.opacity = "0";
-        bean_img.style.transition = "2s";
-        bean_txt.style.right = "-100%";
-        bean_txt.style.opacity = "0";
-        bean_txt.style.transition = "2s";
-      }
+    if (scrollY >= 100) {
+      bean_img.style.left = `${bean_img_left}%`;
+      bean_img.style.opacity = "1";
+      bean_img.style.transition = ease_out;
+      bean_txt.style.right = `${bean_txt_right}%`;
+      bean_txt.style.opacity = "1";
+      bean_txt.style.transition = ease_out;
     }
-
-    function show() {
-      $(bean_img).animate({ left: `${bean_img_left}%`, opacity: "1" }, 2000);
-      $(bean_txt).animate({ right: `${bean_txt_right}%`, opacity: "1" }, 2000);
-    }
-
-    function hide() {
-      $(bean_img).animate({ left: "-100%", opacity: "0" }, 2000);
-      $(bean_txt).animate({ right: "-100%", opacity: "0" }, 2000);
+    if (scrollY == 0) {
+      bean_img.style.left = "-100%";
+      bean_img.style.opacity = "0";
+      bean_img.style.transition = ease_out;
+      bean_txt.style.right = "-100%";
+      bean_txt.style.opacity = "0";
+      bean_txt.style.transition = ease_out;
     }
   }
-  // if (window.matchMedia("(max-width: 1023px)").matches) {
-  // }
-  // if (window.matchMedia("(max-width: 767px)").matches) {
-  // }
-});
+}
+if (window.matchMedia("(min-width: 768px)and(max-width: 1023px)").matches) {
+  let bean_img_left = 20;
+  let bean_txt_right = 11;
+
+  start();
+
+  window.addEventListener("scroll", scroll);
+
+  function scroll() {
+    let scrollY = window.scrollY;
+
+    if (scrollY >= 100) {
+      bean_img.style.left = `${bean_img_left}%`;
+      bean_img.style.opacity = "1";
+      bean_img.style.transition = ease_out;
+      bean_txt.style.right = `${bean_txt_right}%`;
+      bean_txt.style.opacity = "1";
+      bean_txt.style.transition = ease_out;
+    }
+    if (scrollY == 0) {
+      bean_img.style.left = "-100%";
+      bean_img.style.opacity = "0";
+      bean_img.style.transition = ease_out;
+      bean_txt.style.right = "-100%";
+      bean_txt.style.opacity = "0";
+      bean_txt.style.transition = ease_out;
+    }
+  }
+}
+if (window.matchMedia("(max-width: 767px)").matches) {
+  let bean_img_top = 10.5;
+  let bean_txt_bottom = 10.5;
+
+  bean_img.style.left = "50%";
+
+  mobile_start();
+
+  window.addEventListener("scroll", scroll);
+
+  function scroll() {
+    let scrollY = window.scrollY;
+
+    if (scrollY >= 100) {
+      bean_img.style.top = `${bean_img_top}%`;
+      bean_img.style.opacity = "1";
+      bean_img.style.transition = ease_out;
+      bean_txt.style.bottom = `${bean_txt_bottom}%`;
+      bean_txt.style.opacity = "1";
+      bean_txt.style.transition = ease_out;
+    }
+    if (scrollY == 0) {
+      bean_img.style.top = "-100%";
+      bean_img.style.opacity = "0";
+      bean_img.style.transition = ease_out;
+      bean_txt.style.bottom = "-100%";
+      bean_txt.style.opacity = "0";
+      bean_txt.style.transition = ease_out;
+    }
+  }
+}
+
+function start() {
+  bean_img.style.left = "-100%";
+  bean_img.style.opacity = "0";
+  bean_txt.style.right = "-100%";
+  bean_txt.style.opacity = "0";
+}
+
+function mobile_start() {
+  bean_img.style.top = "-100%";
+  bean_img.style.opacity = "0";
+  bean_txt.style.bottom = "-100%";
+  bean_txt.style.opacity = "0";
+}

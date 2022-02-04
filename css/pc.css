@@ -677,7 +677,21 @@
     position: relative;
     width: 100%;
     height: 400px;
-    background: url(img/);
+  }
+  .hawaii_wrap .pc_hawaii {
+    width: 100%;
+    height: 100%;
+  }
+  .hawaii_wrap .pick_inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .pick_inner .hawaii_title {
+    padding-top: 94px;
+    max-width: 1080px;
+    width: 100%;
   }
   .pick_wrap {
     position: relative;

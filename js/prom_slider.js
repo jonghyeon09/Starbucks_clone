@@ -24,7 +24,6 @@ $(document).ready(function () {
     $("#play").removeClass("stop");
     $("#play").addClass("start");
     startPos = e.touches[0].pageX;
-    $(li).stop().animate({ opacity: "0.4" });
     offset = 0;
   });
 
@@ -39,52 +38,32 @@ $(document).ready(function () {
     // }
     // ul.style.left = `${offset}px`;
     ul.style.transform = `translate3d(${offset}px, 0px, 0px)`;
-    // ul.style.transitionDuration = "0ms";
     document.querySelector("body").style.overflow = "hidden";
-    console.log(`${offset}`);
   });
 
   prom_slider_view.addEventListener("touchend", (e) => {
-    ul.style.transform = `translate3d(0px, 0px, 0px)`;
-    ul.style.transitionDuration = "1ms";
     // ul.style.left = `${li_width}`;
+    ul.style.transform = `translate3d(${offset}px, 0px, 0px)`;
+    ul.style.transitionDuration = "0ms";
+
     if (offset < -150) {
+      offset0();
       next_event();
     } else if (offset > 150) {
+      offset0();
       prev_event();
     } else {
-      ul.style.transform = `translate3d(0px, 0px, 0px)`;
-      ul.style.transitionDuration = "0ms";
+      offset0();
+      ul.style.transitionDuration = "100ms";
       li_opacity(count);
     }
-    // const sum = curPos + (e.changedTouches[0].pageX - startPos);
-    // let destination = Math.round(sum / li_width) * li_width;
-    // if (destination == 0) {
-    //   destination = 0;
-    //   count = 0;
-    // } else if (destination == -li_width) {
-    //   destination = -li_width;
-    //   count = 1;
-    // } else if (destination == -(li_width * 2)) {
-    //   count = 2;
-    //   destination = -(li_width * 2);
-    // } else if (destination == -(li_width * 3)) {
-    //   destination = 0;
-    //   count = 0;
-    // } else if (destination == li_width) {
-    //   destination = -li_width * 2;
-    //   count = 2;
-    // }
-    // curPos = destination;
-    // ul.style.transform = `translate3d(${destination}px, 0px, 0px)`;
-    // ul.style.transitionDuration = "300ms";
-    // setTimeout(() => {
-    //   ul.style.transitionDuration = "0ms";
-    // }, 300);
-    // pager(count);
-    // $(li).stop().animate({ opacity: "1" });
     document.querySelector("body").style.overflow = "visible";
   });
+
+  function offset0() {
+    ul.style.transform = `translate3d(0px, 0px, 0px)`;
+    ul.style.transitionDuration = "1ms";
+  }
   //////////////////////////////////////////////////
   $(pager_bt[0]).children().addClass("active");
 
