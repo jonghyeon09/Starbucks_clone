@@ -1,5 +1,4 @@
 @import url(reset.css);
-@import url(keyframes.css);
 @media screen and (min-width: 1024px) {
   .wrap {
     position: relative;
@@ -677,21 +676,80 @@
     position: relative;
     width: 100%;
     height: 400px;
+    background: url(img/reserve_2022_hawaii_kau_bg_v2.jpg) no-repeat
+      center/cover;
   }
-  .hawaii_wrap .pc_hawaii {
-    width: 100%;
-    height: 100%;
-  }
-  .hawaii_wrap .pick_inner {
+  .hawaii_wrap .hawaii_inner {
     position: relative;
     width: 100%;
     height: 100%;
     margin: 0 auto;
   }
-  .pick_inner .hawaii_title {
+  .hawaii_inner .hawaii_title {
+    position: relative;
+    top: 0;
+    margin: 0 auto;
     padding-top: 94px;
     max-width: 1080px;
+    z-index: 1;
+  }
+  .hawaii_inner .hawaii_bg {
+    position: absolute;
+    top: 0;
     width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .hawaii_inner .hawaii_bg::before,
+  .hawaii_inner .hawaii_bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background: no-repeat center;
+  }
+  .hawaii_inner .hawaii_bg::before {
+    left: 0;
+    width: 539px;
+    background: url(img/reserve_2022_hawaii_kau_left_obj_v2.png);
+  }
+  .hawaii_inner .hawaii_bg::after {
+    right: 0;
+    width: 509px;
+    background: url(img/reserve_2022_hawaii_kau_right_obj_v2.png);
+  }
+  .hawaii_inner .hawaii_bg img {
+    margin: 0 auto;
+  }
+  .hawaii_inner .hawaii_bg .pc_hawaii {
+    display: block;
+  }
+  .hawaii_inner .hawaii_bg .m_hawaii {
+    display: none;
+  }
+  .hawaii_inner .hawaii_bt {
+    position: relative;
+    max-width: 1080px;
+    margin: 0 auto;
+    margin-top: 23px;
+    padding-left: 281px;
+  }
+  .hawaii_inner .hawaii_bt a {
+    display: block;
+    width: 125px;
+    height: 38px;
+    color: #b9813e;
+    font-size: 15px;
+    text-align: center;
+    line-height: 34px;
+    border: 2px solid #b9813e;
+    border-radius: 5px;
+    transition: 0.7s;
+  }
+  .hawaii_inner .hawaii_bt a:hover {
+    background-color: #b9813e;
+    color: white;
+    font-weight: bold;
   }
   .pick_wrap {
     position: relative;
@@ -700,5 +758,105 @@
     background: url(img/fav_prod_bg_new.jpg) center fixed no-repeat;
     background-color: #45434c;
     background-size: auto 100%;
+  }
+  .pick_wrap .pick_inner {
+    position: relative;
+    width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .pick_inner .pick_txt01 {
+    background: url(img/fav_prod_txt01.png);
+    width: 258px;
+    height: 204px;
+    position: absolute;
+    left: 200px;
+    top: 120px;
+  }
+  .pick_inner .pick_txt02 {
+    background: url(img/fav_prod_txt02.png);
+    width: 362px;
+    height: 156px;
+    position: absolute;
+    left: 92px;
+    top: 370px;
+  }
+  .pick_inner .pick_img {
+    background: url(img/2022_Strawberry_pick_img.png);
+    width: 672px;
+    height: 458px;
+    position: absolute;
+    right: -10px;
+    top: 100px;
+  }
+  .pick_inner .pick_bt {
+    position: absolute;
+    left: 328px;
+    top: 570px;
+  }
+  .pick_inner .pick_bt a {
+    display: inline-block;
+    width: 125px;
+    height: 38px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    line-height: 34px;
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+  }
+  .pick_inner .pick_bt a:hover {
+    background-color: white;
+    color: black;
+    transition: 0.7s;
+  }
+  .reserve_wrap {
+    position: relative;
+    height: 400px;
+    background: url(img/reserve_bg_pc.png) no-repeat;
+    background-position: 50% 100%;
+    background-size: auto 353px;
+  }
+  .reserve_wrap .reserve_inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .reserve_inner .reserve_title {
+    position: relative;
+    margin: 0 auto;
+    padding: 135px 0 0 55px;
+    max-width: 1100px;
+    width: 100%;
+  }
+  .reserve_inner .reserve_img {
+    position: absolute;
+    top: 0;
+    right: 31%;
+  }
+  .reserve_inner .reserve_img .m_img {
+    display: none;
+  }
+  .reserve_inner .reserv_bt {
+    position: relative;
+    width: 1100px;
+    margin: 33px auto 0;
+  }
+  .reserve_inner .reserv_bt a {
+    display: inline-block;
+    text-align: center;
+    width: 125px;
+    height: 38px;
+    font-size: 15px;
+    border: 2px solid black;
+    border-radius: 5px;
+    line-height: 34px;
+    margin-left: 340px;
+  }
+  .reserve_inner .reserv_bt a:hover {
+    background-color: black;
+    color: white;
+    transition: 0.7s;
   }
 }

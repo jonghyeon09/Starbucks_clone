@@ -23,6 +23,7 @@ $(document).ready(function () {
     clearInterval(interval);
     $("#play").removeClass("stop");
     $("#play").addClass("start");
+    e = 1;
     startPos = e.touches[0].pageX;
     offset = 0;
   });
@@ -72,9 +73,12 @@ $(document).ready(function () {
   $(".prom_wrap").hide();
 
   $(pager_bt).click(function () {
-    clearInterval(interval);
-    $("#play").removeClass("stop");
-    $("#play").addClass("start");
+    setTimeout(() => {
+      $("#play").removeClass("stop");
+      $("#play").addClass("start");
+      e = 1;
+      clearInterval(interval);
+    }, 0);
     i = $(this).index();
     if (click == false) {
       click = true;
@@ -139,10 +143,18 @@ $(document).ready(function () {
 
   $(next).click(function () {
     next_event();
+    $("#play").removeClass("stop");
+    $("#play").addClass("start");
+    e = 1;
+    clearInterval(interval);
   });
 
   $(prev).click(function (e) {
     prev_event();
+    $("#play").removeClass("stop");
+    $("#play").addClass("start");
+    e = 1;
+    clearInterval(interval);
   });
 
   $("#play").click(function () {
@@ -156,7 +168,7 @@ $(document).ready(function () {
       $("#play").addClass("stop");
       $("#play").removeClass("start");
       interval = setInterval(() => {
-        $(next).trigger("click");
+        next_event();
       }, 2000);
     }
   });

@@ -107,6 +107,11 @@ img {
 strong {
   font-weight: bold;
 }
+:root {
+  --ts: translate(-50%, -50%);
+  --tsX: translateX(-50%);
+  --tsY: translateY(-50%);
+}
 /* HTML5 display-role reset for older browsers */
 article,
 aside,

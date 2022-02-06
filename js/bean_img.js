@@ -22,16 +22,19 @@ if (window.matchMedia("(min-width: 1024px)").matches) {
       bean_txt.style.transition = ease_out;
     }
     if (scrollY == 0) {
-      bean_img.style.left = "-100%";
+      bean_img.style.left = "-50%";
       bean_img.style.opacity = "0";
       bean_img.style.transition = ease_out;
-      bean_txt.style.right = "-100%";
+      bean_txt.style.right = "-50%";
       bean_txt.style.opacity = "0";
       bean_txt.style.transition = ease_out;
     }
   }
 }
-if (window.matchMedia("(min-width: 768px)and(max-width: 1023px)").matches) {
+if (
+  window.matchMedia("screen and (min-width: 768px) and (max-width: 1023px)")
+    .matches
+) {
   let bean_img_left = 20;
   let bean_txt_right = 11;
 
@@ -51,10 +54,10 @@ if (window.matchMedia("(min-width: 768px)and(max-width: 1023px)").matches) {
       bean_txt.style.transition = ease_out;
     }
     if (scrollY == 0) {
-      bean_img.style.left = "-100%";
+      bean_img.style.left = "-50%";
       bean_img.style.opacity = "0";
       bean_img.style.transition = ease_out;
-      bean_txt.style.right = "-100%";
+      bean_txt.style.right = "-50%";
       bean_txt.style.opacity = "0";
       bean_txt.style.transition = ease_out;
     }
@@ -72,8 +75,8 @@ if (window.matchMedia("(max-width: 767px)").matches) {
 
   function scroll() {
     let scrollY = window.scrollY;
-
-    if (scrollY >= 100) {
+    console.log(scrollY);
+    if (scrollY > 1000) {
       bean_img.style.top = `${bean_img_top}%`;
       bean_img.style.opacity = "1";
       bean_img.style.transition = ease_out;
@@ -81,11 +84,11 @@ if (window.matchMedia("(max-width: 767px)").matches) {
       bean_txt.style.opacity = "1";
       bean_txt.style.transition = ease_out;
     }
-    if (scrollY == 0) {
-      bean_img.style.top = "-100%";
+    if (scrollY < 1000) {
+      bean_img.style.top = "-50%";
       bean_img.style.opacity = "0";
       bean_img.style.transition = ease_out;
-      bean_txt.style.bottom = "-100%";
+      bean_txt.style.bottom = "-50%";
       bean_txt.style.opacity = "0";
       bean_txt.style.transition = ease_out;
     }
@@ -93,15 +96,15 @@ if (window.matchMedia("(max-width: 767px)").matches) {
 }
 
 function start() {
-  bean_img.style.left = "-100%";
+  bean_img.style.left = "-50%";
   bean_img.style.opacity = "0";
-  bean_txt.style.right = "-100%";
+  bean_txt.style.right = "-50%";
   bean_txt.style.opacity = "0";
 }
 
 function mobile_start() {
-  bean_img.style.top = "-100%";
+  bean_img.style.top = "-50%";
   bean_img.style.opacity = "0";
-  bean_txt.style.bottom = "-100%";
+  bean_txt.style.bottom = "-50%";
   bean_txt.style.opacity = "0";
 }

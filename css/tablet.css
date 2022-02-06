@@ -1,5 +1,4 @@
 @import url(reset.css);
-@import url(keyframes.css);
 @media screen and (max-width: 1023px) {
   .wrap {
     position: relative;
@@ -179,7 +178,7 @@
     position: absolute;
     right: 40px;
     top: 30px;
-    transform: translate(-50%);
+    transform: var(--tsX);
   }
   .arrow_sub {
     background: url(img/mob_gnb_arrow_up_g.png) no-repeat;
@@ -189,7 +188,7 @@
     position: absolute;
     right: 40px;
     top: 30px;
-    transform: translate(-50%);
+    transform: var(--tsX);
   }
   .m_gnb_menu,
   .m_gnb_sub {
@@ -413,7 +412,7 @@
     height: 421px;
     position: relative;
     left: 50%;
-    transform: translateX(-50%);
+    transform: var(--tsX);
     margin-top: 25px;
     overflow: hidden;
   }
@@ -693,5 +692,119 @@
   .bean_inner .bean_txt .bean_bt a:hover {
     background-color: #453d3d;
     color: white;
+  }
+  .hawaii_wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(img/reserve_2022_hawaii_kau_bg_v2.jpg) no-repeat
+      center/cover;
+  }
+  .hawaii_wrap .hawaii_inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .hawaii_inner .hawaii_title {
+    display: none;
+  }
+  .hawaii_inner .hawaii_bg {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .hawaii_inner .hawaii_bg .pc_hawaii {
+    display: none;
+  }
+  .hawaii_inner .hawaii_bg .m_hawaii {
+    display: block;
+    width: 100%;
+  }
+  .hawaii_inner .hawaii_bt {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: var(--tsX);
+    margin: 0 auto;
+  }
+  .hawaii_inner .hawaii_bt a {
+    display: block;
+    width: 125px;
+    height: 38px;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    line-height: 34px;
+    border: 2px solid #b9813e;
+    background-color: #b9813e;
+    border-radius: 5px;
+    transition: 0.7s;
+  }
+  .pick_wrap {
+    position: relative;
+    width: 100%;
+    height: 1130px;
+    background: url(img/mob_fav_prod_bg_new.jpg) center no-repeat;
+    background-size: 100% auto;
+  }
+  .pick_wrap .pick_inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .pick_inner .pick_txt01 {
+    background: url(img/mobile_menu_txt01.png);
+    background-size: 100% auto;
+    width: 350px;
+    height: 72px;
+    position: absolute;
+    left: 50%;
+    top: 720px;
+    transform: var(--tsX);
+  }
+  .pick_inner .pick_txt02 {
+    background: url(img/mobile_menu_txt02.png);
+    background-size: 100% auto;
+    width: 440px;
+    height: 129px;
+    position: absolute;
+    left: 50%;
+    top: 830px;
+    transform: var(--tsX);
+  }
+  .pick_inner .pick_img {
+    background: url(img/2022_Strawberry_pick_img.png);
+    background-size: 100%;
+    width: 612px;
+    height: 411px;
+    position: absolute;
+    margin: 130px auto 0;
+    left: 50%;
+    transform: var(--tsX);
+  }
+  .pick_inner .pick_bt {
+    position: absolute;
+    left: 328px;
+    top: 1000px;
+  }
+  .pick_inner .pick_bt a {
+    display: inline-block;
+    width: 125px;
+    height: 38px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    line-height: 34px;
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+  }
+  .pick_inner .pick_bt a:hover {
+    background-color: white;
+    color: black;
+    transition: 0.7s;
   }
 }
