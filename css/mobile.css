@@ -718,7 +718,7 @@
     position: relative;
     width: 100%;
     height: 700px;
-    background: url(img/mob_fav_prod_bg_new.jpg) no-repeat center -6px;
+    background: url(img/mob_fav_prod_bg_new.jpg) no-repeat center -3px;
     background-size: cover;
   }
   .pick_wrap .pick_inner {
@@ -777,6 +777,145 @@
   .pick_inner .pick_bt a:hover {
     background-color: white;
     color: black;
+    transition: 0.7s;
+  }
+  .reserve_wrap {
+    position: relative;
+  }
+  .reserve_wrap .reserve_inner {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .reserve_inner .reserve_title {
+    display: none;
+  }
+  .reserve_inner .reserve_img {
+    position: relative;
+    top: 0;
+  }
+  .reserve_inner .reserve_img .m_img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .reserve_inner .reserve_img .pc_img {
+    display: none;
+  }
+  .reserve_inner .reserv_bt {
+    position: absolute;
+    bottom: 3.8%;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .reserve_inner .reserv_bt a {
+    display: inline-block;
+    text-align: center;
+    width: 125px;
+    height: 34px;
+    font-size: 13px;
+    border: 2px solid black;
+    border-radius: 5px;
+    line-height: 30px;
+  }
+  .reserve_inner .reserv_bt a:hover {
+    background-color: black;
+    color: white;
+    transition: 0.7s;
+  }
+  .store_wrap {
+    background: url(img/store_bg.jpg) 100%;
+    width: 100%;
+    height: 750px;
+    position: relative;
+    overflow: hidden;
+  }
+  .store_wrap .store_inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .store_inner .store_img01 {
+    background: url(img/store_exp_img01.png);
+    background-size: 100%;
+    width: 170px;
+    height: 168px;
+    position: absolute;
+    left: 165px;
+    top: 149px;
+    z-index: 2;
+  }
+  .store_inner .store_img02 {
+    background: url(img/store_exp_img02.png);
+    background-size: 100%;
+    width: 240px;
+    height: 204px;
+    position: absolute;
+    left: 25px;
+    top: 0;
+    z-index: 1;
+  }
+  .store_inner .store_img03 {
+    background: url(img/store_exp_img03.png) no-repeat;
+    background-size: 100%;
+    width: 180px;
+    height: 73px;
+    position: absolute;
+    left: 40px;
+    top: 240px;
+    z-index: 1;
+  }
+  .store_inner .store_img04 {
+    background: url(img/store_exp_img04.png);
+    background-size: 100%;
+    width: 170px;
+    height: 75px;
+    position: absolute;
+    left: 180px;
+    bottom: 0;
+  }
+  .store_inner .store_txt01 {
+    background: url(img/mobile_store_txt01.png);
+    background-size: 100%;
+    width: 280px;
+    height: 71px;
+    position: absolute;
+    top: 360px;
+    left: 50%;
+    transform: var(--tsX);
+  }
+  .store_inner .store_txt02 {
+    background: url(img/mobile_store_txt02.png);
+    background-size: 100%;
+    width: 300px;
+    height: 71px;
+    position: absolute;
+    top: 460px;
+    left: 50%;
+    transform: var(--tsX);
+  }
+  .store_inner .store_bt {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    transform: var(--tsX);
+    width: 121px;
+    height: 34px;
+    border: 2px solid black;
+    border-radius: 3px;
+    line-height: 30px;
+    text-align: center;
+  }
+  .store_inner .store_bt a {
+    color: #222;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+  .store_inner .store_bt a:hover {
+    background-color: #222;
+    color: white;
     transition: 0.7s;
   }
 }

@@ -75,7 +75,7 @@ if (window.matchMedia("(max-width: 767px)").matches) {
 
   function scroll() {
     let scrollY = window.scrollY;
-    console.log(scrollY);
+
     if (scrollY > 1000) {
       bean_img.style.top = `${bean_img_top}%`;
       bean_img.style.opacity = "1";
