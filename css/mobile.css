@@ -515,6 +515,11 @@
     width: 40%;
     margin: 0 auto 35px;
   }
+  .reward_inner .logo img {
+    position: relative;
+    left: 50%;
+    transform: var(--tsX);
+  }
   .reward_inner .con {
     width: 90%;
     color: #fff;

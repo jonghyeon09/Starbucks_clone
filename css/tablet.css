@@ -554,6 +554,11 @@
     width: 35%;
     margin: 30px 0;
   }
+  .reward_inner .logo img {
+    position: relative;
+    left: 50%;
+    transform: var(--tsX);
+  }
   .reward_inner .con {
     width: calc(65% - 80px);
     padding-right: 30px;
@@ -788,8 +793,9 @@
   }
   .pick_inner .pick_bt {
     position: absolute;
-    left: 328px;
+    left: 50%;
     top: 1000px;
+    transform: var(--tsX);
   }
   .pick_inner .pick_bt a {
     display: inline-block;
