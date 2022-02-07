@@ -1096,6 +1096,9 @@
     line-height: 24px;
     border-right: 1px solid #393939;
   }
+  .copyright ul li:last-child a {
+    border-right: 0;
+  }
   .copyright .bt_wrap {
     display: flex;
     justify-content: center;

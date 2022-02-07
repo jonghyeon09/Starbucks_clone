@@ -942,6 +942,9 @@
     margin-bottom: 0;
     border-bottom: 1px solid #403a36;
   }
+  .footer_menu ul li {
+    display: list-item;
+  }
   .footer_menu ul li.title {
     position: relative;
   }
@@ -953,6 +956,7 @@
     background-color: #554c46;
   }
   .footer_menu ul li.title .footer_arrow {
+    display: block;
     background: url(img/mobile_footer_arrow_up.png);
     background-size: 20px;
     width: 20px;
@@ -1106,6 +1110,9 @@
     font-size: 12px;
     line-height: 24px;
     border-right: 1px solid #393939;
+  }
+  .copyright ul li:last-child a {
+    border-right: 0;
   }
   .copyright .bt_wrap {
     display: flex;
