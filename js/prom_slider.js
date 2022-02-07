@@ -23,7 +23,6 @@ $(document).ready(function () {
     clearInterval(interval);
     $("#play").removeClass("stop");
     $("#play").addClass("start");
-    e = 1;
     startPos = e.touches[0].pageX;
     offset = 0;
   });
@@ -145,7 +144,6 @@ $(document).ready(function () {
     next_event();
     $("#play").removeClass("stop");
     $("#play").addClass("start");
-    e = 1;
     clearInterval(interval);
   });
 
@@ -153,7 +151,6 @@ $(document).ready(function () {
     prev_event();
     $("#play").removeClass("stop");
     $("#play").addClass("start");
-    e = 1;
     clearInterval(interval);
   });
 
