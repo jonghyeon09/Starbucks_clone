@@ -964,6 +964,12 @@
   .footer_menu .mobile_menu {
     display: none;
   }
+  .footer_arrow {
+    display: none;
+  }
+  .mobile_sub {
+    display: none;
+  }
   .footer_menu ul {
     width: 220px;
     margin-bottom: 30px;
@@ -1009,6 +1015,9 @@
     padding-top: 30px;
     text-align: center;
     font-size: 12px;
+  }
+  .awards_slider_warp {
+    display: none;
   }
   .copyright ul {
     display: flex;

@@ -918,4 +918,218 @@
     color: white;
     transition: 0.7s;
   }
+  footer {
+    background: #2c2a29;
+    position: relative;
+    width: 100%;
+    padding: 0 !important;
+    letter-spacing: -0.5px;
+  }
+  footer .footer_menu {
+    position: relative;
+    background: #554c46;
+    width: 100%;
+    display: block;
+    text-indent: 10px;
+  }
+  .footer_menu .mobile_menu {
+    width: 100%;
+    margin-bottom: 0;
+    border-bottom: 1px solid #403a36;
+  }
+  .footer_menu ul {
+    width: 100%;
+    margin-bottom: 0;
+    border-bottom: 1px solid #403a36;
+  }
+  .footer_menu ul li.title {
+    position: relative;
+  }
+  .footer_menu ul li.title > a {
+    display: block;
+    font-size: 12px;
+    line-height: 50px;
+    color: #fff;
+    background-color: #554c46;
+  }
+  .footer_menu ul li.title .footer_arrow {
+    background: url(img/mobile_footer_arrow_up.png);
+    background-size: 20px;
+    width: 20px;
+    height: 11px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: var(--tsY);
+  }
+  .footer_menu ul li a {
+    display: block;
+    color: #e6dbd3;
+    background-color: #645952;
+    font-size: 14px;
+    line-height: 40px;
+    border: none;
+  }
+  .mobile_sub {
+    display: list-item;
+    position: relative;
+  }
+  .mobile_sub .moblie_arrow {
+    background: url(img/mobile_footer_arrow_up2.png);
+    background-size: 20px;
+    width: 20px;
+    height: 11px;
+    position: absolute;
+    right: 10px;
+    top: 12px;
+  }
+  .mobile_sub ul {
+    border: none;
+  }
+  .mobile_sub ul li a {
+    background-color: #76685e;
+    color: #e6dbd3;
+    display: block;
+    font-size: 14px;
+    line-height: 40px;
+  }
+  .mobile_bt ul {
+    width: 90%;
+    margin: 25px auto 0;
+    text-align: center;
+    display: flex;
+  }
+  .mobile_bt ul li {
+    width: 31%;
+    margin: 0.75%;
+  }
+  .mobile_bt ul li a {
+    display: block;
+    color: #fff;
+    font-size: 17px;
+    border: 2px solid #fff;
+    border-radius: 3px;
+    text-align: center;
+    padding: 10% 3%;
+  }
+  .footer_awards {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin-top: 40px;
+    padding-top: 20px;
+    background-color: #282828;
+  }
+  .footer_awards .footer_awards_inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    transform: var(--tsX);
+    padding-bottom: 20px;
+  }
+  .footer_awards_inner > ul {
+    display: none;
+  }
+  .awards_slider_warp {
+    max-width: 320px;
+    margin: 0 auto 60px;
+  }
+  .awards_slider_warp .awards_slider {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    /* overflow: hidden; */
+  }
+  .awards_slider ul {
+    position: relative;
+  }
+  .awards_slider ul li {
+    position: relative;
+    float: left;
+    width: 320px;
+    margin: 0 auto;
+  }
+  .awards_slider ul li img {
+    position: relative;
+    left: 50%;
+    transform: var(--tsX);
+  }
+  .awards_slider_play {
+    width: 320px;
+    height: 12px;
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+  }
+  .awards_slider_play a.stop {
+    display: inline-block;
+    background: url(img/footer_award_play.png) 0 0;
+    width: 9px;
+    height: 12px;
+    vertical-align: top;
+  }
+  .awards_slider_play a.start {
+    display: inline-block;
+    background: url(img/footer_award_play.png) -9px 0;
+    width: 9px;
+    height: 12px;
+    vertical-align: top;
+  }
+  .copyright {
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    display: block;
+    justify-content: center;
+    color: #999;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 12px;
+  }
+  .copyright ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .copyright ul li {
+    display: flex;
+    text-align: center;
+  }
+  .copyright ul li:first-child > a {
+    color: #00b050;
+    font-weight: bold;
+  }
+  .copyright ul li a {
+    color: #cccccc;
+    padding: 0 10px;
+    font-size: 12px;
+    line-height: 24px;
+    border-right: 1px solid #393939;
+  }
+  .copyright .bt_wrap {
+    display: flex;
+    justify-content: center;
+  }
+  .copyright .bt_wrap a.copy_bt {
+    display: flex;
+    justify-content: center;
+    border: 2px solid #fff;
+    border-radius: 3px;
+    width: 114px;
+    height: 34px;
+    line-height: 30px;
+    color: #fff;
+    margin: 10px 5px 0 5px;
+  }
+  .copyright .copy_menu {
+    padding: 25px 0 5px 0;
+  }
+  .copyright .copy_menu ul li {
+    margin: 0 7px;
+    line-height: 1.3;
+  }
+  .copyright span {
+    line-height: 40px;
+  }
 }
