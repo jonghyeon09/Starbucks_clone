@@ -19,13 +19,13 @@ $(document).ready(function () {
     $(title).click(function () {
       i = $(title).index(this);
 
+      $(ul[i]).children().not(title).stop().slideToggle(300);
+
       if (count == 0) {
         count = 1;
-        $(ul[i]).children().not(title).stop().slideDown();
         $(title_arrow[i]).css({ transform: "none" });
       } else if (count == 1) {
         count = 0;
-        $(ul[i]).children().not(title).stop().slideUp();
         $(title_arrow[i]).css({ transform: "rotate(0.5turn)" });
       }
       console.log(count);
@@ -33,14 +33,13 @@ $(document).ready(function () {
 
     $(sub).click(function (e) {
       i = $(sub).index(this);
+      $(sub_ul[i]).stop().slideToggle(300);
 
       if (sub_count == 0) {
         sub_count = 1;
-        $(sub_ul[i]).stop().slideDown();
         $(sub_arrow[i]).css({ transform: "none" });
       } else if (sub_count == 1) {
         sub_count = 0;
-        $(sub_ul[i]).stop().slideUp();
         $(sub_arrow[i]).css({ transform: "rotate(0.5turn)" });
       }
     });
