@@ -30,7 +30,7 @@ $(document).ready(function () {
   $(m_gnb_title).click(function (e) {
     e.stopPropagation();
     i = $(this).index();
-    $(m_gnb_sub[i]).toggle(300);
+    $(m_gnb_sub[i]).slideToggle(300);
     if (count == false) {
       $(sub_up[i]).css({ transform: "none" });
       count = true;
@@ -45,7 +45,7 @@ $(document).ready(function () {
   $(m_gnb_sub_li).click(function (e) {
     e.stopPropagation();
     i = $(m_gnb_sub_li).index(this);
-    $(m_gnb_sub2[i]).toggle(300);
+    $(m_gnb_sub2[i]).slideToggle(300);
     if (count_sub == false) {
       $(sub_arrow[i]).css({ transform: "none" });
       count_sub = true;
