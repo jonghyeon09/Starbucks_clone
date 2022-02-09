@@ -9,10 +9,6 @@
     <link rel="stylesheet" href="css/tablet.css" />
     <link rel="stylesheet" href="css/mobile.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/gnb.js"></script>
-    <script src="js/m_gnb.js"></script>
-    <script src="js/footer_slider.js"></script>
-    <script src="js/footer_menu.js"></script>
     <script
       type="text/javascript"
       src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=61a66d76ad15a99f52d1ae0d176b4ac0"
@@ -20,7 +16,11 @@
     <script src="js/Ajax.js"></script>
   </head>
   <body>
-    <div id="map" style="width: 100vw; height: 80vh"></div>
+    <div class="wrap">
+      <div class="header_wrap"></div>
+      <div id="map" style="width: 100vw; height: 80vh"></div>
+      <div class="footer_wrap"></div>
+    </div>
     <script>
       var container = document.getElementById("map");
       var options = {
@@ -33,6 +33,21 @@
       var marker = new kakao.maps.Marker({
         position: new kakao.maps.LatLng(37.56609, 126.97821), // 마커의 좌표
         map: map, // 마커를 표시할 지도 객체
+      });
+
+      $.ajax({
+        anync: false,
+        url: "header.html",
+        success: function (data) {
+          $(".header_wrap").html(data);
+        },
+      });
+      $.ajax({
+        anync: false,
+        url: "footer.html",
+        success: function (data) {
+          $(".footer_wrap").html(data);
+        },
       });
     </script>
   </body>

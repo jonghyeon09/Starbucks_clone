@@ -32,6 +32,7 @@
     top: 22px;
     width: 75px;
     height: 75px;
+    z-index: 1001;
   }
   .gnb_wrap_inner .logo a {
     display: block;
